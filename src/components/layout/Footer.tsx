@@ -10,9 +10,6 @@ export default function Footer() {
           {/* Column 1 */}
           <div>
             <div className="flex flex-col mb-4">
-              <Link href="/">
-                <Image src="/images/ifc/brand/logo.png" alt="Industrial Furnace & Controls Logo" width={60} height={60} className="mb-2 object-contain" />
-              </Link>
               <span className="text-xl md:text-2xl font-bold text-[#0000FF] leading-tight tracking-tight">
                 INDUSTRIAL FURNACE <span className="text-[#17191C]">& CONTROLS</span>
               </span>

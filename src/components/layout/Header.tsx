@@ -27,7 +27,9 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 lg:px-8 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/images/ifc/brand/logo.png" alt="Industrial Furnace & Controls Logo" width={60} height={60} className="object-contain" />
+          <div className="w-12 h-12 bg-[#0000FF] rounded-full flex items-center justify-center shrink-0">
+            <span className="text-white font-bold text-xl">IF</span>
+          </div>
           <div className="flex flex-col hidden md:flex">
             <span className="text-xl md:text-2xl font-bold text-[#0000FF] leading-tight tracking-tight">
               INDUSTRIAL FURNACE <span className="text-[#17191C]">& CONTROLS</span>
@@ -90,7 +92,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden xl:block">
-          <Button href="/contact?quote=true" variant="primary" size="sm">
+          <Button href="/contact?quote=true" variant="primary" size="sm" className="whitespace-nowrap">
             REQUEST A QUOTE
           </Button>
         </div>

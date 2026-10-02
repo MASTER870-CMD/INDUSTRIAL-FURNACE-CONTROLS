@@ -26,9 +26,9 @@ export function Button({
   };
 
   const sizes = {
-    sm: "h-9 px-4 text-sm",
-    md: "h-11 px-6 text-base",
-    lg: "h-14 px-8 text-lg",
+    sm: "py-2 px-4 text-sm text-center",
+    md: "py-3 px-6 text-base text-center",
+    lg: "py-4 px-8 text-lg text-center",
   };
 
   const classes = cn(baseStyles, variants[variant], sizes[size], className);

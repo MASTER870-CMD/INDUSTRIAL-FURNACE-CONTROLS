@@ -24,17 +24,17 @@ export default function HomePage() {
               <span className="inline-block text-[#0000FF] font-bold text-xs uppercase tracking-widest mb-4 border border-[#0000FF]/20 bg-[#0000FF]/5 px-3 py-1 rounded-sm w-fit">
                 Industrial Heating Solutions
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-[52px] font-bold text-[#17191C] leading-[1.15] mb-6">
+              <h1 className="text-4xl lg:text-[44px] font-bold text-[#17191C] leading-[1.2] mb-6 tracking-tight">
                 Industrial Furnace & Heating Solutions <span className="text-[#0000FF]">Built Around Your Process</span>
               </h1>
-              <p className="text-lg text-[#5B6268] mb-8 leading-relaxed">
+              <p className="text-base text-[#5B6268] mb-8 leading-relaxed max-w-lg">
                 Industrial and laboratory furnaces, ovens, heating elements, process controls, thermocouples and customized heating systems for demanding applications.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button href="/contact?quote=true" variant="primary" size="lg">
+              <div className="flex flex-col sm:flex-row gap-3 mb-8 w-full sm:w-auto">
+                <Button href="/contact?quote=true" variant="primary" size="md" className="w-full sm:w-auto">
                   REQUEST A TECHNICAL QUOTE
                 </Button>
-                <Button href="/products" variant="outline" size="lg">
+                <Button href="/products" variant="outline" size="md" className="w-full sm:w-auto">
                   EXPLORE PRODUCTS
                 </Button>
               </div>
