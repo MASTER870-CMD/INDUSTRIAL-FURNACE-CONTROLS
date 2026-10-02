@@ -26,24 +26,13 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-[#0000FF] rounded-full flex items-center justify-center shrink-0">
-            <span className="text-white font-bold text-xl">IF</span>
-          </div>
-          <div className="flex flex-col hidden md:flex">
-            <span className="text-xl md:text-2xl font-bold text-[#0000FF] leading-tight tracking-tight">
-              INDUSTRIAL FURNACE <span className="text-[#17191C]">& CONTROLS</span>
-            </span>
-            <span className="text-[#F59625] text-xs font-semibold tracking-wide">
-              Low Power and More Heat Is Our Motto
-            </span>
-          </div>
+        <Link href="/" className="flex items-center shrink-0">
+          <Image src="/images/ifc/brand/logo.jpg" alt="Industrial Furnace & Controls" width={220} height={45} className="object-contain" priority />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-8">
-          <Link href="/" className="text-sm font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors">HOME</Link>
-          <Link href="/about" className="text-sm font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors">ABOUT</Link>
+        <nav className="hidden xl:flex items-center gap-6">
+          <Link href="/about" className="text-[13px] font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors tracking-wide uppercase">ABOUT</Link>
           
           {/* Mega Menu Trigger */}
           <div 
@@ -51,7 +40,7 @@ export default function Header() {
             onMouseEnter={() => setMegaMenuOpen(true)}
             onMouseLeave={() => setMegaMenuOpen(false)}
           >
-            <Link href="/products" className="flex items-center gap-1 text-sm font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors py-2">
+            <Link href="/products" className="flex items-center gap-1 text-[13px] font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors py-2 tracking-wide uppercase">
               PRODUCTS <ChevronDown className="w-4 h-4" />
             </Link>
             
@@ -85,10 +74,10 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/applications" className="text-sm font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors">APPLICATIONS</Link>
-          <Link href="/clients" className="text-sm font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors">CLIENTS</Link>
-          <Link href="/gallery" className="text-sm font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors">GALLERY</Link>
-          <Link href="/contact" className="text-sm font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors">CONTACT</Link>
+          <Link href="/applications" className="text-[13px] font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors tracking-wide uppercase">APPLICATIONS</Link>
+          <Link href="/clients" className="text-[13px] font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors tracking-wide uppercase">CLIENTS</Link>
+          <Link href="/gallery" className="text-[13px] font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors tracking-wide uppercase">GALLERY</Link>
+          <Link href="/contact" className="text-[13px] font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors tracking-wide uppercase">CONTACT</Link>
         </nav>
 
         <div className="hidden xl:block">
@@ -110,7 +99,6 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="xl:hidden absolute top-full left-0 w-full bg-white shadow-lg border-b border-[#E3E6E8] max-h-[80vh] overflow-y-auto">
           <div className="flex flex-col p-6 space-y-5">
-            <Link href="/" className="font-bold text-[#17191C] text-lg" onClick={() => setMobileMenuOpen(false)}>HOME</Link>
             <Link href="/about" className="font-bold text-[#17191C] text-lg" onClick={() => setMobileMenuOpen(false)}>ABOUT</Link>
             
             <div className="font-bold text-[#0000FF] text-lg border-b border-[#E3E6E8] pb-2">PRODUCTS</div>

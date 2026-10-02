@@ -10,12 +10,9 @@ export default function Footer() {
           {/* Column 1 */}
           <div>
             <div className="flex flex-col mb-4">
-              <span className="text-xl md:text-2xl font-bold text-[#0000FF] leading-tight tracking-tight">
-                INDUSTRIAL FURNACE <span className="text-[#17191C]">& CONTROLS</span>
-              </span>
-              <span className="text-[#F59625] text-xs font-semibold tracking-wide">
-                Low Power and More Heat Is Our Motto
-              </span>
+              <Link href="/">
+                <Image src="/images/ifc/brand/logo.jpg" alt="Industrial Furnace & Controls Logo" width={220} height={60} className="mb-2 object-contain" />
+              </Link>
             </div>
             <p className="text-[#5B6268] text-sm leading-relaxed">
               Industrial and laboratory heating solutions, furnaces, ovens, controls, sensors and heating systems.
