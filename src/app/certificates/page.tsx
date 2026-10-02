@@ -9,22 +9,22 @@ export const metadata = {
 export default function CertificatesPage() {
   return (
     <>
-      <div className="bg-[#15191C] pt-20 pb-16 text-white border-b-4 border-[#C96F2C]">
+      <div className="bg-[#F7F8FA] text-[#17191C] pt-20 pb-16  border-b border-[#E3E6E8]">
         <div className="container mx-auto px-4 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Certificates & Quality</h1>
-          <p className="text-lg text-[#E6EAEC] opacity-80 max-w-2xl">
+          <p className="text-lg text-[#5B6268] max-w-2xl">
             Our commitment to manufacturing excellence and rigorous quality control.
           </p>
         </div>
       </div>
 
-      <section className="py-20 bg-[#F7F7F4] min-h-[50vh]">
+      <section className="py-20 bg-[#F7F8FA] min-h-[50vh]">
         <div className="container mx-auto px-4 lg:px-8 flex justify-center">
-          <div className="max-w-2xl w-full bg-white border border-[#E6EAEC] p-8 text-center rounded-sm shadow-sm">
-            <h2 className="text-2xl font-bold text-[#15191C] mb-2">ISO 9001:2015</h2>
+          <div className="max-w-2xl w-full bg-white border border-[#E3E6E8] p-8 text-center rounded-sm shadow-sm">
+            <h2 className="text-2xl font-bold text-[#17191C] mb-2">ISO 9001:2015</h2>
             <p className="text-[#66727A] mb-8">Certified Quality Management System</p>
             
-            <div className="aspect-[1/1.4] max-w-md mx-auto bg-[#E6EAEC] relative overflow-hidden border border-[#d2d7da]">
+            <div className="aspect-[1/1.4] max-w-md mx-auto bg-[#E3E6E8] relative overflow-hidden border border-[#d2d7da]">
               <PlaceholderImage text="Official ISO 9001:2015 Certificate Image" icon={false} />
             </div>
             

@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
-import { MessageCircle, Phone, FileText } from 'lucide-react';
 import Link from 'next/link';
+import { Phone, MessageCircle, FileText } from 'lucide-react';
 
 export default function FloatingActions() {
   return (
@@ -9,42 +9,40 @@ export default function FloatingActions() {
       {/* Desktop Floating WhatsApp */}
       <div className="hidden md:flex fixed bottom-6 right-6 z-50 flex-col gap-3">
         <a 
-          href="/contact?quote=true"
-          className="bg-[#252D32] text-white p-3 rounded-full shadow-lg hover:bg-[#15191C] hover:scale-110 transition-all flex items-center justify-center group relative"
-          title="Request Quote"
-        >
-          <FileText className="w-6 h-6" />
-          <span className="absolute right-full mr-4 bg-[#252D32] text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-            Request Quote
-          </span>
-        </a>
-        <a 
-          href="https://wa.me/919900129807"
-          target="_blank"
+          href="https://wa.me/919900129807" 
+          target="_blank" 
           rel="noopener noreferrer"
-          className="bg-[#25D366] text-white p-3 rounded-full shadow-lg hover:bg-[#128C7E] hover:scale-110 transition-all flex items-center justify-center group relative"
-          title="WhatsApp Us"
+          className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#20bd5a] hover:-translate-y-1 transition-all"
+          aria-label="WhatsApp Us"
         >
-          <MessageCircle className="w-6 h-6" />
-          <span className="absolute right-full mr-4 bg-[#25D366] text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-            WhatsApp Us
-          </span>
+          <MessageCircle className="w-7 h-7" />
         </a>
       </div>
 
       {/* Mobile Sticky Bottom Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 w-full bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-50 border-t border-[#E6EAEC] flex justify-between">
-        <a href="tel:+919900129807" className="flex-1 flex flex-col items-center justify-center py-3 text-[#252D32] active:bg-[#F7F7F4] border-r border-[#E6EAEC]">
-          <Phone className="w-5 h-5 mb-1" />
-          <span className="text-[10px] font-bold">CALL</span>
+      <div className="md:hidden fixed bottom-0 left-0 w-full z-50 flex shadow-[0_-4px_12px_rgba(0,0,0,0.05)] text-sm font-bold bg-white">
+        <a 
+          href="tel:+919900129807" 
+          className="flex-1 flex flex-col items-center justify-center py-3 text-[#17191C] hover:bg-[#F7F8FA] border-t-2 border-[#E3E6E8] active:bg-[#E3E6E8]"
+        >
+          <Phone className="w-5 h-5 mb-1 text-[#0000FF]" />
+          CALL
         </a>
-        <a href="https://wa.me/919900129807" target="_blank" rel="noopener noreferrer" className="flex-1 flex flex-col items-center justify-center py-3 text-[#25D366] active:bg-[#F7F7F4] border-r border-[#E6EAEC]">
-          <MessageCircle className="w-5 h-5 mb-1" />
-          <span className="text-[10px] font-bold">WHATSAPP</span>
+        <a 
+          href="https://wa.me/919900129807" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex-1 flex flex-col items-center justify-center py-3 text-[#17191C] hover:bg-[#F7F8FA] border-t-2 border-[#E3E6E8] border-l border-[#E3E6E8] active:bg-[#E3E6E8]"
+        >
+          <MessageCircle className="w-5 h-5 mb-1 text-[#25D366]" />
+          WHATSAPP
         </a>
-        <Link href="/contact?quote=true" className="flex-1 flex flex-col items-center justify-center py-3 text-[#C96F2C] active:bg-[#F7F7F4]">
-          <FileText className="w-5 h-5 mb-1" />
-          <span className="text-[10px] font-bold">QUOTE</span>
+        <Link 
+          href="/contact?quote=true"
+          className="flex-1 flex flex-col items-center justify-center py-3 text-white bg-[#0000FF] border-t-2 border-[#0000FF] active:bg-[#0000CC]"
+        >
+          <FileText className="w-5 h-5 mb-1 text-white" />
+          QUOTE
         </Link>
       </div>
     </>

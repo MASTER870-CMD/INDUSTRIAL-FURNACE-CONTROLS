@@ -37,10 +37,10 @@ const applications = [
 export default function ApplicationsPage() {
   return (
     <>
-      <div className="bg-[#15191C] pt-20 pb-16 text-white border-b-4 border-[#C96F2C]">
+      <div className="bg-[#F7F8FA] text-[#17191C] pt-20 pb-16  border-b border-[#E3E6E8]">
         <div className="container mx-auto px-4 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Industrial Applications</h1>
-          <p className="text-lg text-[#E6EAEC] opacity-80 max-w-2xl">
+          <p className="text-lg text-[#5B6268] max-w-2xl">
             Our systems are engineered for diverse thermal processing requirements across multiple industries.
           </p>
         </div>
@@ -50,16 +50,16 @@ export default function ApplicationsPage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {applications.map((app, i) => (
-              <div key={i} className="border border-[#E6EAEC] hover:border-[#C96F2C] transition-colors rounded-sm overflow-hidden flex flex-col">
-                <div className="h-48 bg-[#F7F7F4]">
+              <div key={i} className="border border-[#E3E6E8] hover:border-[#0000FF] transition-colors rounded-sm overflow-hidden flex flex-col">
+                <div className="h-48 bg-[#F7F8FA]">
                   <PlaceholderImage text={app.title} className="border-none" />
                 </div>
                 <div className="p-6 flex-grow bg-white">
-                  <h3 className="text-lg font-bold text-[#15191C] mb-4 tracking-tight">{app.title}</h3>
+                  <h3 className="text-lg font-bold text-[#17191C] mb-4 tracking-tight">{app.title}</h3>
                   <ul className="space-y-2">
                     {app.items.map((item, j) => (
                       <li key={j} className="flex items-start text-sm text-[#66727A]">
-                        <span className="text-[#C96F2C] mr-2 font-bold">•</span>
+                        <span className="text-[#0000FF] mr-2 font-bold">•</span>
                         {item}
                       </li>
                     ))}
@@ -71,9 +71,9 @@ export default function ApplicationsPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-[#F7F7F4] border-t border-[#E6EAEC] text-center">
+      <section className="py-20 bg-[#F7F8FA] border-t border-[#E3E6E8] text-center">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-2xl font-bold text-[#15191C] mb-4">Don't see your specific application?</h2>
+          <h2 className="text-2xl font-bold text-[#17191C] mb-4">Don't see your specific application?</h2>
           <p className="text-[#66727A] mb-8">
             We design and manufacture custom equipment according to unique customer requirements.
           </p>

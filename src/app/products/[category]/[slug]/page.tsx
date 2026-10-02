@@ -24,16 +24,16 @@ export default async function ProductDetailPage({ params }: Props) {
 
   return (
     <>
-      <div className="bg-[#F7F7F4] py-8 border-b border-[#E6EAEC]">
+      <div className="bg-[#F7F8FA] py-8 border-b border-[#E3E6E8]">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center text-sm text-[#66727A] mb-4">
-            <Link href="/" className="hover:text-[#C96F2C]">Home</Link>
+            <Link href="/" className="hover:text-[#0000FF]">Home</Link>
             <ChevronRight className="w-4 h-4 mx-2 shrink-0" />
-            <Link href="/products" className="hover:text-[#C96F2C]">Products</Link>
+            <Link href="/products" className="hover:text-[#0000FF]">Products</Link>
             <ChevronRight className="w-4 h-4 mx-2 shrink-0" />
-            <Link href={`/products/${category.slug}`} className="hover:text-[#C96F2C] whitespace-nowrap">{category.title}</Link>
+            <Link href={`/products/${category.slug}`} className="hover:text-[#0000FF] whitespace-nowrap">{category.title}</Link>
             <ChevronRight className="w-4 h-4 mx-2 shrink-0" />
-            <span className="text-[#15191C] font-semibold truncate">{product.name}</span>
+            <span className="text-[#17191C] font-semibold truncate">{product.name}</span>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default async function ProductDetailPage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
             {/* Product Image */}
             <div>
-              <div className="aspect-[4/3] bg-[#F7F7F4] border border-[#E6EAEC] rounded-sm relative overflow-hidden mb-4 p-4">
+              <div className="aspect-[4/3] bg-[#F7F8FA] border border-[#E3E6E8] rounded-sm relative overflow-hidden mb-4 p-4">
                 <PlaceholderImage text={`Official IFC Image: ${product.name}`} className="border-none shadow-sm" />
               </div>
               <p className="text-xs text-[#66727A] text-center italic">* Official product image to be updated.</p>
@@ -51,33 +51,33 @@ export default async function ProductDetailPage({ params }: Props) {
 
             {/* Product Info */}
             <div>
-              <span className="text-[#C96F2C] font-bold text-sm tracking-widest uppercase mb-2 block">
+              <span className="text-[#0000FF] font-bold text-sm tracking-widest uppercase mb-2 block">
                 {category.title}
               </span>
-              <h1 className="text-3xl md:text-5xl font-bold text-[#15191C] mb-6 tracking-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-[#17191C] mb-6 tracking-tight">
                 {product.name}
               </h1>
               
-              <div className="text-[#252D32] leading-relaxed mb-8 border-l-4 border-[#E6EAEC] pl-4">
+              <div className="text-[#5B6268] leading-relaxed mb-8 border-l-4 border-[#E3E6E8] pl-4">
                 Engineered for precision thermal processing. The {product.name} provides exceptional temperature uniformity, robust construction, and advanced process control for industrial and laboratory applications.
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                <div className="bg-[#F7F7F4] p-4 border border-[#E6EAEC] rounded-sm">
-                  <Settings2 className="w-6 h-6 text-[#C96F2C] mb-2" />
-                  <h3 className="font-bold text-[#15191C] text-sm mb-1">Custom Configuration</h3>
+                <div className="bg-[#F7F8FA] p-4 border border-[#E3E6E8] rounded-sm">
+                  <Settings2 className="w-6 h-6 text-[#0000FF] mb-2" />
+                  <h3 className="font-bold text-[#17191C] text-sm mb-1">Custom Configuration</h3>
                   <p className="text-xs text-[#66727A]">Built to application requirements</p>
                 </div>
-                <div className="bg-[#F7F7F4] p-4 border border-[#E6EAEC] rounded-sm">
-                  <Factory className="w-6 h-6 text-[#C96F2C] mb-2" />
-                  <h3 className="font-bold text-[#15191C] text-sm mb-1">Industrial Grade</h3>
+                <div className="bg-[#F7F8FA] p-4 border border-[#E3E6E8] rounded-sm">
+                  <Factory className="w-6 h-6 text-[#0000FF] mb-2" />
+                  <h3 className="font-bold text-[#17191C] text-sm mb-1">Industrial Grade</h3>
                   <p className="text-xs text-[#66727A]">Heavy-duty construction</p>
                 </div>
               </div>
 
-              <div className="p-6 bg-[#15191C] text-white rounded-sm shadow-xl">
+              <div className="p-6 bg-white text-[#17191C] border border-[#E3E6E8] rounded-sm shadow-sm">
                 <h3 className="text-xl font-bold mb-2">Request Technical Specification</h3>
-                <p className="text-[#E6EAEC] opacity-80 text-sm mb-6">
+                <p className="text-[#5B6268] text-sm mb-6">
                   Contact our engineering team to discuss capabilities, capacities, and a customized quotation for your process.
                 </p>
                 <Button href={`/contact?quote=true&product=${product.slug}`} variant="primary" className="w-full">
@@ -92,28 +92,28 @@ export default async function ProductDetailPage({ params }: Props) {
             <div className="lg:col-span-2 space-y-16">
               
               <section>
-                <h2 className="text-2xl font-bold text-[#15191C] mb-6 flex items-center">
-                  <div className="w-1.5 h-6 bg-[#C96F2C] mr-3"></div>
+                <h2 className="text-2xl font-bold text-[#17191C] mb-6 flex items-center">
+                  <div className="w-1.5 h-6 bg-[#0000FF] mr-3"></div>
                   Key Specifications
                 </h2>
-                <div className="bg-white border border-[#E6EAEC] rounded-sm">
+                <div className="bg-white border border-[#E3E6E8] rounded-sm">
                   <table className="w-full text-sm text-left">
                     <tbody>
-                      <tr className="border-b border-[#E6EAEC]">
-                        <th className="py-4 px-6 bg-[#F7F7F4] font-semibold text-[#15191C] w-1/3">Operating Temperature</th>
-                        <td className="py-4 px-6 text-[#252D32]">Customizable based on model / application</td>
+                      <tr className="border-b border-[#E3E6E8]">
+                        <th className="py-4 px-6 bg-[#F7F8FA] font-semibold text-[#17191C] w-1/3">Operating Temperature</th>
+                        <td className="py-4 px-6 text-[#5B6268]">Customizable based on model / application</td>
                       </tr>
-                      <tr className="border-b border-[#E6EAEC]">
-                        <th className="py-4 px-6 bg-[#F7F7F4] font-semibold text-[#15191C]">Capacity / Dimensions</th>
-                        <td className="py-4 px-6 text-[#252D32]">Built according to customer requirements</td>
+                      <tr className="border-b border-[#E3E6E8]">
+                        <th className="py-4 px-6 bg-[#F7F8FA] font-semibold text-[#17191C]">Capacity / Dimensions</th>
+                        <td className="py-4 px-6 text-[#5B6268]">Built according to customer requirements</td>
                       </tr>
-                      <tr className="border-b border-[#E6EAEC]">
-                        <th className="py-4 px-6 bg-[#F7F7F4] font-semibold text-[#15191C]">Control System</th>
-                        <td className="py-4 px-6 text-[#252D32]">Programmable PID / Thyristor control options</td>
+                      <tr className="border-b border-[#E3E6E8]">
+                        <th className="py-4 px-6 bg-[#F7F8FA] font-semibold text-[#17191C]">Control System</th>
+                        <td className="py-4 px-6 text-[#5B6268]">Programmable PID / Thyristor control options</td>
                       </tr>
                       <tr>
-                        <th className="py-4 px-6 bg-[#F7F7F4] font-semibold text-[#15191C]">Power Supply</th>
-                        <td className="py-4 px-6 text-[#252D32]">Configured to local industrial standards</td>
+                        <th className="py-4 px-6 bg-[#F7F8FA] font-semibold text-[#17191C]">Power Supply</th>
+                        <td className="py-4 px-6 text-[#5B6268]">Configured to local industrial standards</td>
                       </tr>
                     </tbody>
                   </table>
@@ -122,8 +122,8 @@ export default async function ProductDetailPage({ params }: Props) {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-[#15191C] mb-6 flex items-center">
-                  <div className="w-1.5 h-6 bg-[#C96F2C] mr-3"></div>
+                <h2 className="text-2xl font-bold text-[#17191C] mb-6 flex items-center">
+                  <div className="w-1.5 h-6 bg-[#0000FF] mr-3"></div>
                   Features & Capabilities
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -136,8 +136,8 @@ export default async function ProductDetailPage({ params }: Props) {
                     "Customized dimensions",
                   ].map((feature, i) => (
                     <div key={i} className="flex items-start">
-                      <CheckCircle2 className="w-5 h-5 text-[#C96F2C] shrink-0 mr-3" />
-                      <span className="text-[#252D32]">{feature}</span>
+                      <CheckCircle2 className="w-5 h-5 text-[#0000FF] shrink-0 mr-3" />
+                      <span className="text-[#5B6268]">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -147,27 +147,27 @@ export default async function ProductDetailPage({ params }: Props) {
 
             {/* Sidebar Applications */}
             <div className="space-y-8">
-              <div className="bg-[#F7F7F4] p-6 border border-[#E6EAEC] rounded-sm">
-                <h3 className="font-bold text-[#15191C] mb-4 text-lg">Typical Applications</h3>
+              <div className="bg-[#F7F8FA] p-6 border border-[#E3E6E8] rounded-sm">
+                <h3 className="font-bold text-[#17191C] mb-4 text-lg">Typical Applications</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-center text-sm text-[#252D32]"><div className="w-1.5 h-1.5 bg-[#C96F2C] rounded-full mr-3"></div> Heat Treatment</li>
-                  <li className="flex items-center text-sm text-[#252D32]"><div className="w-1.5 h-1.5 bg-[#C96F2C] rounded-full mr-3"></div> Laboratory R&D</li>
-                  <li className="flex items-center text-sm text-[#252D32]"><div className="w-1.5 h-1.5 bg-[#C96F2C] rounded-full mr-3"></div> Material Testing</li>
-                  <li className="flex items-center text-sm text-[#252D32]"><div className="w-1.5 h-1.5 bg-[#C96F2C] rounded-full mr-3"></div> Industrial Processing</li>
+                  <li className="flex items-center text-sm text-[#5B6268]"><div className="w-1.5 h-1.5 bg-[#0000FF] rounded-full mr-3"></div> Heat Treatment</li>
+                  <li className="flex items-center text-sm text-[#5B6268]"><div className="w-1.5 h-1.5 bg-[#0000FF] rounded-full mr-3"></div> Laboratory R&D</li>
+                  <li className="flex items-center text-sm text-[#5B6268]"><div className="w-1.5 h-1.5 bg-[#0000FF] rounded-full mr-3"></div> Material Testing</li>
+                  <li className="flex items-center text-sm text-[#5B6268]"><div className="w-1.5 h-1.5 bg-[#0000FF] rounded-full mr-3"></div> Industrial Processing</li>
                 </ul>
               </div>
 
               {/* Related Products */}
               {relatedProducts.length > 0 && (
                 <div>
-                  <h3 className="font-bold text-[#15191C] mb-4 text-lg">Related {category.title}</h3>
+                  <h3 className="font-bold text-[#17191C] mb-4 text-lg">Related {category.title}</h3>
                   <div className="space-y-4">
                     {relatedProducts.map(rp => (
-                      <Link href={`/products/${category.slug}/${rp.slug}`} key={rp.slug} className="group flex items-center p-3 border border-[#E6EAEC] hover:border-[#C96F2C] transition-colors rounded-sm bg-white">
-                        <div className="w-12 h-12 bg-[#F7F7F4] shrink-0 mr-4 border border-[#E6EAEC]">
+                      <Link href={`/products/${category.slug}/${rp.slug}`} key={rp.slug} className="group flex items-center p-3 border border-[#E3E6E8] hover:border-[#0000FF] transition-colors rounded-sm bg-white">
+                        <div className="w-12 h-12 bg-[#F7F8FA] shrink-0 mr-4 border border-[#E3E6E8]">
                           <PlaceholderImage text="" icon={false} className="border-none opacity-50" />
                         </div>
-                        <h4 className="font-bold text-sm text-[#15191C] group-hover:text-[#C96F2C] transition-colors line-clamp-2">{rp.name}</h4>
+                        <h4 className="font-bold text-sm text-[#17191C] group-hover:text-[#0000FF] transition-colors line-clamp-2">{rp.name}</h4>
                       </Link>
                     ))}
                   </div>

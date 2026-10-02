@@ -1,19 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ifc-bg: #F7F7F4;
-  --color-ifc-white: #FFFFFF;
-  --color-ifc-graphite: #15191C;
-  --color-ifc-deep-steel: #252D32;
-  --color-ifc-tech-gray: #66727A;
-  --color-ifc-light-steel: #E6EAEC;
-  --color-ifc-accent: #C96F2C;
-  --color-ifc-amber: #D8943D;
+  --color-ifc-blue: #0000FF;
+  --color-ifc-orange: #F59625;
+  --color-ifc-bg-primary: #FFFFFF;
+  --color-ifc-bg-secondary: #F7F8FA;
+  --color-ifc-text-main: #17191C;
+  --color-ifc-text-sec: #5B6268;
+  --color-ifc-border: #E3E6E8;
 }
 
 :root {
-  --background: var(--color-ifc-bg);
-  --foreground: var(--color-ifc-graphite);
+  --background: var(--color-ifc-bg-primary);
+  --foreground: var(--color-ifc-text-main);
 }
 
 body {
@@ -31,13 +30,6 @@ body {
   }
 }
 
-/* Base global styles */
 html {
   scroll-behavior: smooth;
-}
-
-.bg-blueprint {
-  background-image: linear-gradient(var(--color-ifc-light-steel) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-ifc-light-steel) 1px, transparent 1px);
-  background-size: 20px 20px;
 }

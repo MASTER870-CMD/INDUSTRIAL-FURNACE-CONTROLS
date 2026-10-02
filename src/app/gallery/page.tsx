@@ -29,10 +29,10 @@ export default function GalleryPage() {
 
   return (
     <>
-      <div className="bg-[#15191C] pt-20 pb-16 text-white border-b-4 border-[#C96F2C]">
+      <div className="bg-[#F7F8FA] text-[#17191C] pt-20 pb-16  border-b border-[#E3E6E8]">
         <div className="container mx-auto px-4 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Gallery</h1>
-          <p className="text-lg text-[#E6EAEC] opacity-80 max-w-2xl">
+          <p className="text-lg text-[#5B6268] max-w-2xl">
             Visual overview of our industrial furnaces, ovens, controls, and heating systems.
           </p>
         </div>
@@ -48,8 +48,8 @@ export default function GalleryPage() {
                 onClick={() => setActiveFilter(cat)}
                 className={`px-4 py-2 text-sm font-semibold rounded-sm transition-colors ${
                   activeFilter === cat 
-                    ? 'bg-[#252D32] text-white' 
-                    : 'bg-[#F7F7F4] text-[#66727A] hover:bg-[#E6EAEC] hover:text-[#15191C]'
+                    ? 'bg-[#5B6268] text-white' 
+                    : 'bg-[#F7F8FA] text-[#66727A] hover:bg-[#E3E6E8] hover:text-[#17191C]'
                 }`}
               >
                 {cat}
@@ -60,10 +60,10 @@ export default function GalleryPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredItems.map((item, i) => (
               <div key={i} className="group cursor-pointer">
-                <div className="aspect-square bg-[#F7F7F4] overflow-hidden rounded-sm relative border border-[#E6EAEC] group-hover:border-[#C96F2C] transition-colors mb-3">
+                <div className="aspect-square bg-[#F7F8FA] overflow-hidden rounded-sm relative border border-[#E3E6E8] group-hover:border-[#0000FF] transition-colors mb-3">
                   <PlaceholderImage text="Official IFC product image" className="group-hover:scale-105 transition-transform duration-500" />
                 </div>
-                <h3 className="font-bold text-[#15191C] text-sm group-hover:text-[#C96F2C] transition-colors">{item.title}</h3>
+                <h3 className="font-bold text-[#17191C] text-sm group-hover:text-[#0000FF] transition-colors">{item.title}</h3>
                 <p className="text-xs text-[#66727A]">{item.category}</p>
               </div>
             ))}

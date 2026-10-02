@@ -16,13 +16,13 @@ export function Button({
   children, 
   ...props 
 }: ButtonProps) {
-  const baseStyles = "inline-flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-sm";
+  const baseStyles = "inline-flex items-center justify-center font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-sm";
   
   const variants = {
-    primary: "bg-[#C96F2C] text-white hover:bg-[#b05f22] focus:ring-[#C96F2C]",
-    secondary: "bg-[#252D32] text-white hover:bg-[#15191C] focus:ring-[#252D32]",
-    outline: "border-2 border-[#252D32] text-[#252D32] hover:bg-[#252D32] hover:text-white focus:ring-[#252D32]",
-    ghost: "bg-transparent text-[#252D32] hover:bg-[#E6EAEC] focus:ring-[#E6EAEC]",
+    primary: "bg-[#F59625] text-white hover:bg-[#E0851B] focus:ring-[#F59625]",
+    secondary: "bg-[#0000FF] text-white hover:bg-[#0000CC] focus:ring-[#0000FF]",
+    outline: "border-2 border-[#0000FF] text-[#0000FF] hover:bg-[#0000FF] hover:text-white focus:ring-[#0000FF]",
+    ghost: "bg-transparent text-[#0000FF] hover:bg-[#F7F8FA] focus:ring-[#0000FF]",
   };
 
   const sizes = {
