@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { categories } from '@/data/categories';
 import { Button } from '../ui/Button';
@@ -10,6 +11,17 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === '/' && pathname !== '/') return false;
+    return pathname.startsWith(path);
+  };
+  
+  const navLinkClass = (path: string) => `
+    text-[13px] font-semibold tracking-wide uppercase py-2 border-b-2 transition-colors
+    ${isActive(path) ? 'text-[#0000FF] border-[#0000FF]' : 'text-[#17191C] border-transparent hover:text-[#0000FF] hover:border-[#0000FF]'}
+  `;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,8 +43,9 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-6">
-          <Link href="/about" className="text-[13px] font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors tracking-wide uppercase">ABOUT</Link>
+        <nav className="hidden xl:flex items-center gap-8">
+          <Link href="/" className={navLinkClass('/')}>HOME</Link>
+          <Link href="/about" className={navLinkClass('/about')}>ABOUT</Link>
           
           {/* Mega Menu Trigger */}
           <div 
@@ -40,7 +53,7 @@ export default function Header() {
             onMouseEnter={() => setMegaMenuOpen(true)}
             onMouseLeave={() => setMegaMenuOpen(false)}
           >
-            <Link href="/products" className="flex items-center gap-1 text-[13px] font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors py-2 tracking-wide uppercase">
+            <Link href="/products" className={`flex items-center gap-1 ${navLinkClass('/products')}`}>
               PRODUCTS <ChevronDown className="w-4 h-4" />
             </Link>
             
@@ -74,10 +87,10 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/applications" className="text-[13px] font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors tracking-wide uppercase">APPLICATIONS</Link>
-          <Link href="/clients" className="text-[13px] font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors tracking-wide uppercase">CLIENTS</Link>
-          <Link href="/gallery" className="text-[13px] font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors tracking-wide uppercase">GALLERY</Link>
-          <Link href="/contact" className="text-[13px] font-semibold text-[#17191C] hover:text-[#0000FF] transition-colors tracking-wide uppercase">CONTACT</Link>
+          <Link href="/applications" className={navLinkClass('/applications')}>APPLICATIONS</Link>
+          <Link href="/clients" className={navLinkClass('/clients')}>CLIENTS</Link>
+          <Link href="/gallery" className={navLinkClass('/gallery')}>GALLERY</Link>
+          <Link href="/contact" className={navLinkClass('/contact')}>CONTACT</Link>
         </nav>
 
         <div className="hidden xl:block">
@@ -99,21 +112,22 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="xl:hidden absolute top-full left-0 w-full bg-white shadow-lg border-b border-[#E3E6E8] max-h-[80vh] overflow-y-auto">
           <div className="flex flex-col p-6 space-y-5">
-            <Link href="/about" className="font-bold text-[#17191C] text-lg" onClick={() => setMobileMenuOpen(false)}>ABOUT</Link>
+            <Link href="/" className={`font-bold text-lg ${isActive('/') ? 'text-[#0000FF]' : 'text-[#17191C]'}`} onClick={() => setMobileMenuOpen(false)}>HOME</Link>
+            <Link href="/about" className={`font-bold text-lg ${isActive('/about') ? 'text-[#0000FF]' : 'text-[#17191C]'}`} onClick={() => setMobileMenuOpen(false)}>ABOUT</Link>
             
-            <div className="font-bold text-[#0000FF] text-lg border-b border-[#E3E6E8] pb-2">PRODUCTS</div>
+            <div className={`font-bold text-lg border-b border-[#E3E6E8] pb-2 ${isActive('/products') ? 'text-[#0000FF]' : 'text-[#17191C]'}`}>PRODUCTS</div>
             <div className="pl-4 flex flex-col space-y-4">
               {categories.map(cat => (
-                <Link key={cat.id} href={`/products/${cat.slug}`} className="text-base text-[#5B6268] font-semibold" onClick={() => setMobileMenuOpen(false)}>
+                <Link key={cat.id} href={`/products/${cat.slug}`} className={`text-base font-semibold ${pathname === `/products/${cat.slug}` ? 'text-[#0000FF]' : 'text-[#5B6268]'}`} onClick={() => setMobileMenuOpen(false)}>
                   {cat.title}
                 </Link>
               ))}
             </div>
             
-            <Link href="/applications" className="font-bold text-[#17191C] text-lg" onClick={() => setMobileMenuOpen(false)}>APPLICATIONS</Link>
-            <Link href="/clients" className="font-bold text-[#17191C] text-lg" onClick={() => setMobileMenuOpen(false)}>CLIENTS</Link>
-            <Link href="/gallery" className="font-bold text-[#17191C] text-lg" onClick={() => setMobileMenuOpen(false)}>GALLERY</Link>
-            <Link href="/contact" className="font-bold text-[#17191C] text-lg" onClick={() => setMobileMenuOpen(false)}>CONTACT</Link>
+            <Link href="/applications" className={`font-bold text-lg ${isActive('/applications') ? 'text-[#0000FF]' : 'text-[#17191C]'}`} onClick={() => setMobileMenuOpen(false)}>APPLICATIONS</Link>
+            <Link href="/clients" className={`font-bold text-lg ${isActive('/clients') ? 'text-[#0000FF]' : 'text-[#17191C]'}`} onClick={() => setMobileMenuOpen(false)}>CLIENTS</Link>
+            <Link href="/gallery" className={`font-bold text-lg ${isActive('/gallery') ? 'text-[#0000FF]' : 'text-[#17191C]'}`} onClick={() => setMobileMenuOpen(false)}>GALLERY</Link>
+            <Link href="/contact" className={`font-bold text-lg ${isActive('/contact') ? 'text-[#0000FF]' : 'text-[#17191C]'}`} onClick={() => setMobileMenuOpen(false)}>CONTACT</Link>
             
             <Button href="/contact?quote=true" variant="primary" className="w-full justify-center py-4 mt-4 text-lg">
               REQUEST A QUOTE
