@@ -171,11 +171,11 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {categories.filter(c => c.slug !== 'furnaces').map((cat, index) => (
               <ScrollReveal delay={0.1 * index} direction="up" key={cat.slug} className="h-full">
-                <Link href={`/products/${cat.slug}`} className="group h-full bg-white border border-[#E3E6E8] flex flex-col hover:border-[#0000FF] hover:shadow-lg transition-all duration-300 rounded-sm overflow-hidden hover:-translate-y-1">
-                  <div className="h-48 border-b border-[#E3E6E8] bg-[#F7F8FA]">
-                    <PlaceholderImage src={cat.image} alt={cat.title} className="h-full opacity-80 group-hover:opacity-100 transition-opacity" />
+                <Link href={`/products/${cat.slug}`} className="group h-full bg-white border border-[#E3E6E8] flex flex-col hover:border-transparent hover:shadow-[0_20px_40px_-15px_rgba(0,0,255,0.1)] transition-all duration-300 rounded-sm overflow-hidden hover:[animation:float_3s_ease-in-out_infinite]">
+                  <div className="h-48 border-b border-[#E3E6E8] bg-white overflow-hidden relative">
+                    <PlaceholderImage src={cat.image} alt={cat.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                   </div>
-                  <div className="p-6 flex-1 flex flex-col">
+                  <div className="p-6 flex-1 flex flex-col relative bg-white">
                     <h4 className="font-bold text-lg text-[#17191C] mb-2 uppercase group-hover:text-[#0000FF] transition-colors">{cat.title}</h4>
                     <p className="text-sm text-[#5B6268] mb-4 flex-1 line-clamp-2">{cat.description}</p>
                     <span className="text-[#0000FF] font-semibold text-sm flex items-center group-hover:text-[#F59625] transition-colors">
