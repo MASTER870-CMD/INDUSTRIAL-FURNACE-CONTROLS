@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { categories } from '@/data/categories';
 import { PlaceholderImage } from '@/components/ui/PlaceholderImage';
 import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 interface Props {
   params: Promise<{ category: string }>;
@@ -36,16 +37,18 @@ export default async function CategoryPage({ params }: Props) {
       <section className="py-20 bg-white min-h-[50vh]">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {category.products.map((product) => (
-              <Link key={product.slug} href={`/products/${category.slug}/${product.slug}`} className="group flex items-center p-4 border border-[#E3E6E8] hover:border-[#0000FF] transition-colors rounded-sm">
-                <div className="w-16 h-16 bg-[#F7F8FA] shrink-0 mr-4 border border-[#E3E6E8]">
-                  <PlaceholderImage src={product.image} alt={product.name} className="border-none group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="flex-grow">
-                  <h3 className="font-bold text-[#17191C] group-hover:text-[#0000FF] transition-colors">{product.name}</h3>
-                </div>
-                <ArrowRight className="w-5 h-5 text-[#E3E6E8] group-hover:text-[#0000FF] transition-colors" />
-              </Link>
+            {category.products.map((product, index) => (
+              <ScrollReveal key={product.slug} delay={index * 0.05} direction="up">
+                <Link href={`/products/${category.slug}/${product.slug}`} className="group flex items-center p-5 bg-white border border-[#E3E6E8] hover:border-transparent hover:shadow-[0_20px_40px_-15px_rgba(0,0,255,0.1)] transition-all duration-300 rounded-sm hover:-translate-y-1">
+                  <div className="w-20 h-20 bg-[#F7F8FA] shrink-0 mr-5 rounded-full flex items-center justify-center p-3 border border-[#E3E6E8] group-hover:border-[#0000FF]/20 transition-colors">
+                    <PlaceholderImage src={product.image} alt={product.name} className="border-none object-contain w-full h-full group-hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-bold text-lg text-[#17191C] group-hover:text-[#0000FF] transition-colors">{product.name}</h3>
+                  </div>
+                  <ArrowRight className="w-6 h-6 text-[#E3E6E8] group-hover:text-[#0000FF] group-hover:translate-x-1 transition-all duration-300 shrink-0" />
+                </Link>
+              </ScrollReveal>
             ))}
           </div>
         </div>
