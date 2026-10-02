@@ -10,6 +10,7 @@ import Image from 'next/image';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -139,14 +140,26 @@ export default function Header() {
             <Link href="/" className={`font-bold text-lg ${isActive('/') ? 'text-[#0000FF]' : 'text-[#17191C]'}`} onClick={() => setMobileMenuOpen(false)}>HOME</Link>
             <Link href="/about" className={`font-bold text-lg ${isActive('/about') ? 'text-[#0000FF]' : 'text-[#17191C]'}`} onClick={() => setMobileMenuOpen(false)}>ABOUT</Link>
             
-            <div className={`font-bold text-lg border-b border-[#E3E6E8] pb-2 ${isActive('/products') ? 'text-[#0000FF]' : 'text-[#17191C]'}`}>PRODUCTS</div>
-            <div className="pl-4 flex flex-col space-y-4">
-              {categories.map(cat => (
-                <Link key={cat.id} href={`/products/${cat.slug}`} className={`text-base font-semibold ${pathname === `/products/${cat.slug}` ? 'text-[#0000FF]' : 'text-[#5B6268]'}`} onClick={() => setMobileMenuOpen(false)}>
-                  {cat.title}
+            <button 
+              onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+              className={`flex justify-between items-center w-full font-bold text-lg border-b border-[#E3E6E8] pb-2 ${isActive('/products') ? 'text-[#0000FF]' : 'text-[#17191C]'}`}
+            >
+              PRODUCTS
+              <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${mobileProductsOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {mobileProductsOpen && (
+              <div className="pl-4 flex flex-col space-y-4 animate-fade-in-up">
+                <Link href="/products" className="text-base font-bold text-[#17191C]" onClick={() => setMobileMenuOpen(false)}>
+                  All Products Overview
                 </Link>
-              ))}
-            </div>
+                {categories.map(cat => (
+                  <Link key={cat.id} href={`/products/${cat.slug}`} className={`text-base font-semibold ${pathname === `/products/${cat.slug}` ? 'text-[#0000FF]' : 'text-[#5B6268]'}`} onClick={() => setMobileMenuOpen(false)}>
+                    {cat.title}
+                  </Link>
+                ))}
+              </div>
+            )}
             
             <Link href="/applications" className={`font-bold text-lg ${isActive('/applications') ? 'text-[#0000FF]' : 'text-[#17191C]'}`} onClick={() => setMobileMenuOpen(false)}>APPLICATIONS</Link>
             <Link href="/clients" className={`font-bold text-lg ${isActive('/clients') ? 'text-[#0000FF]' : 'text-[#17191C]'}`} onClick={() => setMobileMenuOpen(false)}>CLIENTS</Link>
