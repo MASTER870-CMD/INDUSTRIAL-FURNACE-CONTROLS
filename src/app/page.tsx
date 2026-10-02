@@ -21,24 +21,24 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
             {/* Left Content */}
             <div className="flex flex-col justify-center max-w-xl">
-              <span className="inline-block text-[#0000FF] font-bold text-xs uppercase tracking-widest mb-4 border border-[#0000FF]/20 bg-[#0000FF]/5 px-3 py-1 rounded-sm w-fit">
+              <span className="inline-block text-[#0000FF] font-bold text-xs uppercase tracking-widest mb-4 border border-[#0000FF]/20 bg-[#0000FF]/5 px-3 py-1 rounded-sm w-fit animate-fade-in-up">
                 Industrial Heating Solutions
               </span>
-              <h1 className="text-4xl lg:text-[44px] font-bold text-[#17191C] leading-[1.2] mb-6 tracking-tight">
+              <h1 className="text-4xl lg:text-[44px] font-bold text-[#17191C] leading-[1.2] mb-6 tracking-tight animate-fade-in-up animation-delay-100">
                 Industrial Furnace & Heating Solutions <span className="text-[#0000FF]">Built Around Your Process</span>
               </h1>
-              <p className="text-base text-[#5B6268] mb-8 leading-relaxed max-w-lg">
+              <p className="text-base text-[#5B6268] mb-8 leading-relaxed max-w-lg animate-fade-in-up animation-delay-200">
                 Industrial and laboratory furnaces, ovens, heating elements, process controls, thermocouples and customized heating systems for demanding applications.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 mb-8 w-full sm:w-auto">
-                <Button href="/contact?quote=true" variant="primary" size="md" className="w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-3 mb-8 w-full sm:w-auto animate-fade-in-up animation-delay-300">
+                <Button href="/contact?quote=true" variant="primary" size="md" className="w-full sm:w-auto hover:-translate-y-1 hover:shadow-lg transition-all">
                   REQUEST A TECHNICAL QUOTE
                 </Button>
-                <Button href="/products" variant="outline" size="md" className="w-full sm:w-auto">
+                <Button href="/products" variant="outline" size="md" className="w-full sm:w-auto hover:-translate-y-1 transition-all">
                   EXPLORE PRODUCTS
                 </Button>
               </div>
-              <p className="text-sm text-[#5B6268] font-medium border-t border-[#E3E6E8] pt-4">
+              <p className="text-sm text-[#5B6268] font-medium border-t border-[#E3E6E8] pt-4 animate-fade-in-up animation-delay-400">
                 Furnaces • Ovens • Process Control • Heating Elements • Temperature Sensors
               </p>
             </div>

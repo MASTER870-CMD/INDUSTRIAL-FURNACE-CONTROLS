@@ -19,8 +19,13 @@ export default function Header() {
   };
   
   const navLinkClass = (path: string) => `
-    text-[13px] font-semibold tracking-wide uppercase py-2 border-b-2 transition-colors
-    ${isActive(path) ? 'text-[#0000FF] border-[#0000FF]' : 'text-[#17191C] border-transparent hover:text-[#0000FF] hover:border-[#0000FF]'}
+    relative group text-[13px] font-semibold tracking-wide uppercase py-2 transition-colors
+    ${isActive(path) ? 'text-[#0000FF]' : 'text-[#17191C] hover:text-[#0000FF]'}
+  `;
+  
+  const underlineClass = (path: string) => `
+    absolute bottom-0 left-0 h-[2px] bg-[#0000FF] transition-all duration-300 ease-out
+    ${isActive(path) ? 'w-full' : 'w-0 group-hover:w-full'}
   `;
 
   useEffect(() => {
@@ -44,17 +49,24 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden xl:flex items-center gap-8">
-          <Link href="/" className={navLinkClass('/')}>HOME</Link>
-          <Link href="/about" className={navLinkClass('/about')}>ABOUT</Link>
+          <Link href="/" className={navLinkClass('/')}>
+            HOME
+            <span className={underlineClass('/')}></span>
+          </Link>
+          <Link href="/about" className={navLinkClass('/about')}>
+            ABOUT
+            <span className={underlineClass('/about')}></span>
+          </Link>
           
           {/* Mega Menu Trigger */}
           <div 
-            className="relative group"
+            className="relative group/mega"
             onMouseEnter={() => setMegaMenuOpen(true)}
             onMouseLeave={() => setMegaMenuOpen(false)}
           >
             <Link href="/products" className={`flex items-center gap-1 ${navLinkClass('/products')}`}>
               PRODUCTS <ChevronDown className="w-4 h-4" />
+              <span className={underlineClass('/products')}></span>
             </Link>
             
             {/* Mega Menu Dropdown */}
@@ -87,10 +99,22 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/applications" className={navLinkClass('/applications')}>APPLICATIONS</Link>
-          <Link href="/clients" className={navLinkClass('/clients')}>CLIENTS</Link>
-          <Link href="/gallery" className={navLinkClass('/gallery')}>GALLERY</Link>
-          <Link href="/contact" className={navLinkClass('/contact')}>CONTACT</Link>
+          <Link href="/applications" className={navLinkClass('/applications')}>
+            APPLICATIONS
+            <span className={underlineClass('/applications')}></span>
+          </Link>
+          <Link href="/clients" className={navLinkClass('/clients')}>
+            CLIENTS
+            <span className={underlineClass('/clients')}></span>
+          </Link>
+          <Link href="/gallery" className={navLinkClass('/gallery')}>
+            GALLERY
+            <span className={underlineClass('/gallery')}></span>
+          </Link>
+          <Link href="/contact" className={navLinkClass('/contact')}>
+            CONTACT
+            <span className={underlineClass('/contact')}></span>
+          </Link>
         </nav>
 
         <div className="hidden xl:block">

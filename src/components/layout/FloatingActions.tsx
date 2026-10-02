@@ -12,10 +12,11 @@ export default function FloatingActions() {
           href="https://wa.me/919900129807" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#20bd5a] hover:-translate-y-1 transition-all"
+          className="group relative w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl hover:scale-110 hover:-translate-y-2 transition-all duration-300 ease-out z-50"
           aria-label="WhatsApp Us"
         >
-          <MessageCircle className="w-7 h-7" />
+          <div className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20 group-hover:opacity-40"></div>
+          <MessageCircle className="w-7 h-7 relative z-10" />
         </a>
       </div>
 
