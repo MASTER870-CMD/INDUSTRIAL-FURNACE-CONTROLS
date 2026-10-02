@@ -41,7 +41,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="h-[500px]">
-              <PlaceholderImage text="Manufacturing Facility / Engineering Setup" className="rounded-sm" />
+              <PlaceholderImage src="/images/ifc/brand/years.jpg" text="Manufacturing Facility" className="rounded-sm" />
             </div>
           </div>
         </div>

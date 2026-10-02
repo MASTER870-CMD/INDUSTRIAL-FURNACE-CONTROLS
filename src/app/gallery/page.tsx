@@ -3,19 +3,19 @@ import React, { useState } from 'react';
 import { PlaceholderImage } from '@/components/ui/PlaceholderImage';
 
 const galleryItems = [
-  { category: 'Furnaces', title: 'Bottom Loading Furnace' },
-  { category: 'Furnaces', title: 'Muffle Furnace' },
-  { category: 'Furnaces', title: 'Bogie Hearth Furnace' },
-  { category: 'Furnaces', title: 'Sealed Quench Furnace' },
-  { category: 'Ovens', title: 'Lab Oven' },
-  { category: 'Ovens', title: 'Industrial Conveyor Oven' },
-  { category: 'Control Panels', title: 'PID Control Panel' },
-  { category: 'Control Panels', title: 'Furnace Control System' },
-  { category: 'Heating Elements', title: 'MoSi2 Elements' },
-  { category: 'Heating Elements', title: 'SiC Elements' },
-  { category: 'Thermocouples', title: 'K-Type Thermocouple' },
-  { category: 'Industrial Heaters', title: 'Immersion Heater' },
-  { category: 'Wax Heating Systems', title: '1 MT Wax Melting Tank' },
+  { category: 'Furnaces', title: 'Bottom Loading Furnace', src: '/images/ifc/furnaces/bottomslide.jpg' },
+  { category: 'Furnaces', title: 'Muffle Furnace', src: '/images/ifc/furnaces/muffleslide.jpg' },
+  { category: 'Furnaces', title: 'Bogie Hearth Furnace', src: '/images/ifc/furnaces/chamber3.jpg' },
+  { category: 'Furnaces', title: 'Sealed Quench Furnace', src: '/images/ifc/furnaces/quench2.jpg' },
+  { category: 'Ovens', title: 'Lab Oven', src: '/images/ifc/ovens/labovenslide.jpg' },
+  { category: 'Ovens', title: 'Industrial Conveyor Oven', src: '/images/ifc/ovens/conveyorslide1.jpg' },
+  { category: 'Control Panels', title: 'PID Control Panel', src: '/images/ifc/controls/instrumentslide1.jpg' },
+  { category: 'Control Panels', title: 'Furnace Control System', src: '/images/ifc/controls/furcontrolslide1.jpg' },
+  { category: 'Heating Elements', title: 'MoSi2 Elements', src: '/images/ifc/accessories/mosislide1.jpg' },
+  { category: 'Heating Elements', title: 'SiC Elements', src: '/images/ifc/accessories/sic1.jpg' },
+  { category: 'Thermocouples', title: 'K-Type Thermocouple', src: '/images/ifc/thermocouples/thermoslide1.jpg' },
+  { category: 'Industrial Heaters', title: 'Immersion Heater', src: '/images/ifc/heaters/immersion1.jpg' },
+  { category: 'Wax Heating Systems', title: '1 MT Wax Melting Tank', src: '/images/ifc/wax/waxtankslide1.jpg' },
 ];
 
 const categories = ['All', 'Furnaces', 'Ovens', 'Control Panels', 'Heating Elements', 'Thermocouples', 'Industrial Heaters', 'Wax Heating Systems'];
@@ -61,7 +61,7 @@ export default function GalleryPage() {
             {filteredItems.map((item, i) => (
               <div key={i} className="group cursor-pointer">
                 <div className="aspect-square bg-[#F7F8FA] overflow-hidden rounded-sm relative border border-[#E3E6E8] group-hover:border-[#0000FF] transition-colors mb-3">
-                  <PlaceholderImage text="Official IFC product image" className="group-hover:scale-105 transition-transform duration-500" />
+                  <PlaceholderImage src={item.src} alt={item.title} className="group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <h3 className="font-bold text-[#17191C] text-sm group-hover:text-[#0000FF] transition-colors">{item.title}</h3>
                 <p className="text-xs text-[#66727A]">{item.category}</p>

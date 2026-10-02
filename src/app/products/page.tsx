@@ -27,7 +27,7 @@ export default function ProductsPage() {
             {categories.map((cat) => (
               <Link key={cat.id} href={`/products/${cat.slug}`} className="group border border-[#E3E6E8] hover:border-[#0000FF] transition-colors rounded-sm overflow-hidden flex flex-col">
                 <div className="h-48 bg-[#F7F8FA] relative overflow-hidden">
-                  <PlaceholderImage text={cat.title} className="group-hover:scale-105 transition-transform duration-500 border-none" />
+                  <PlaceholderImage src={cat.image} text={cat.title} className="group-hover:scale-105 transition-transform duration-500 border-none" />
                 </div>
                 <div className="p-6 flex-grow bg-white flex flex-col">
                   <h2 className="text-2xl font-bold text-[#17191C] mb-2">{cat.title}</h2>

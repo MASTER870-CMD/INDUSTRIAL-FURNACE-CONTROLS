@@ -25,7 +25,7 @@ export default function CertificatesPage() {
             <p className="text-[#66727A] mb-8">Certified Quality Management System</p>
             
             <div className="aspect-[1/1.4] max-w-md mx-auto bg-[#E3E6E8] relative overflow-hidden border border-[#d2d7da]">
-              <PlaceholderImage text="Official ISO 9001:2015 Certificate Image" icon={false} />
+              <PlaceholderImage src="/images/ifc/brand/ISO CERTIFICATE.png" alt="ISO 9001:2015 Certificate" />
             </div>
             
             <p className="text-sm text-[#66727A] mt-6 italic">

@@ -39,7 +39,7 @@ export default async function CategoryPage({ params }: Props) {
             {category.products.map((product) => (
               <Link key={product.slug} href={`/products/${category.slug}/${product.slug}`} className="group flex items-center p-4 border border-[#E3E6E8] hover:border-[#0000FF] transition-colors rounded-sm">
                 <div className="w-16 h-16 bg-[#F7F8FA] shrink-0 mr-4 border border-[#E3E6E8]">
-                  <PlaceholderImage text="" icon={false} className="border-none opacity-50" />
+                  <PlaceholderImage src={product.image} alt={product.name} className="border-none group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="flex-grow">
                   <h3 className="font-bold text-[#17191C] group-hover:text-[#0000FF] transition-colors">{product.name}</h3>

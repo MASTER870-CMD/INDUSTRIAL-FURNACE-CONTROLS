@@ -44,7 +44,7 @@ export default async function ProductDetailPage({ params }: Props) {
             {/* Product Image */}
             <div>
               <div className="aspect-[4/3] bg-[#F7F8FA] border border-[#E3E6E8] rounded-sm relative overflow-hidden mb-4 p-4">
-                <PlaceholderImage text={`Official IFC Image: ${product.name}`} className="border-none shadow-sm" />
+                <PlaceholderImage src={product.image} alt={product.name} className="border-none shadow-sm" />
               </div>
               <p className="text-xs text-[#66727A] text-center italic">* Official product image to be updated.</p>
             </div>
@@ -165,7 +165,7 @@ export default async function ProductDetailPage({ params }: Props) {
                     {relatedProducts.map(rp => (
                       <Link href={`/products/${category.slug}/${rp.slug}`} key={rp.slug} className="group flex items-center p-3 border border-[#E3E6E8] hover:border-[#0000FF] transition-colors rounded-sm bg-white">
                         <div className="w-12 h-12 bg-[#F7F8FA] shrink-0 mr-4 border border-[#E3E6E8]">
-                          <PlaceholderImage text="" icon={false} className="border-none opacity-50" />
+                          <PlaceholderImage src={rp.image} alt={rp.name} className="border-none group-hover:scale-105 transition-transform duration-500" />
                         </div>
                         <h4 className="font-bold text-sm text-[#17191C] group-hover:text-[#0000FF] transition-colors line-clamp-2">{rp.name}</h4>
                       </Link>

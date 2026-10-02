@@ -52,7 +52,7 @@ export default function ApplicationsPage() {
             {applications.map((app, i) => (
               <div key={i} className="border border-[#E3E6E8] hover:border-[#0000FF] transition-colors rounded-sm overflow-hidden flex flex-col">
                 <div className="h-48 bg-[#F7F8FA]">
-                  <PlaceholderImage text={app.title} className="border-none" />
+                  <PlaceholderImage src="/images/ifc/brand/heating.png" alt={app.title} className="border-none group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6 flex-grow bg-white">
                   <h3 className="text-lg font-bold text-[#17191C] mb-4 tracking-tight">{app.title}</h3>

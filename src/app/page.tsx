@@ -45,7 +45,7 @@ export default function HomePage() {
             
             {/* Right Image */}
             <div className="relative h-[400px] lg:h-[600px] w-full rounded-sm overflow-hidden bg-[#F7F8FA] border border-[#E3E6E8] shadow-sm">
-              <PlaceholderImage text="Official IFC High-Temperature Furnace Image" className="h-full" />
+              <PlaceholderImage src="/images/ifc/brand/electrical_oven.png" text="High-Temperature Furnace" className="h-full" />
             </div>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function HomePage() {
                 </Button>
               </div>
               <div className="order-1 lg:order-2 h-[350px] lg:h-[450px]">
-                <PlaceholderImage text="Official IFC High-Temperature Chamber Furnace Image" className="h-full" />
+                <PlaceholderImage src="/images/ifc/furnaces/chamberslide.jpg" text="High-Temperature Chamber Furnace" className="h-full" />
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function HomePage() {
             {categories.filter(c => c.slug !== 'furnaces').map((cat) => (
               <Link key={cat.slug} href={`/products/${cat.slug}`} className="group bg-white border border-[#E3E6E8] flex flex-col hover:border-[#0000FF] transition-colors rounded-sm overflow-hidden">
                 <div className="h-48 border-b border-[#E3E6E8] bg-[#F7F8FA]">
-                  <PlaceholderImage text={`Representative ${cat.title} Image`} className="h-full opacity-80 group-hover:opacity-100 transition-opacity" />
+                  <PlaceholderImage src={cat.image} alt={cat.title} className="h-full opacity-80 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h4 className="font-bold text-lg text-[#17191C] mb-2 uppercase group-hover:text-[#0000FF] transition-colors">{cat.title}</h4>
@@ -169,7 +169,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="h-[400px] lg:h-[500px]">
-              <PlaceholderImage text="IFC Engineering & Control Panel Assembly" className="h-full" />
+              <PlaceholderImage src="/images/ifc/controls/controlpanel2.jpg" text="Engineering Control Panel" className="h-full" />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-[#17191C] mb-6">Process & Furnace Control</h2>
